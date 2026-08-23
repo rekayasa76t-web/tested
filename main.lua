@@ -3436,7 +3436,7 @@ do
 		Tools._pickaxeHitAnimConn=animator.AnimationPlayed:Connect(function(track)
 			local animation=track and track.Animation
 			if not animation then return end
-			if animation.Name=="PickaxeHit" or animation.AnimationId=="rbxassetid://82311454956442" then
+			if animation.Name=="PickaxeHit" or animation.AnimationId=="rbxassetid://139314277000827" then
 				local speed=1
 				if boulderFastDig then
 					speed=1+((math.clamp(boulderDigSpeed or 100,100,10000)-100)/9900)*999
