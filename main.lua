@@ -7004,10 +7004,19 @@ function InitializeUI()
 	local H=UIHelpers
 	local Root=Instance.new("Frame",MainSG)
 	Root.Size=UDim2.new(0,520,0,400); Root.Position=UDim2.new(0.5,-260,0.5,-200); Root.BackgroundTransparency=1
-	local MinimizedIcon=Instance.new("ImageButton",Root)
-	MinimizedIcon.Size=UDim2.new(1,0,1,0); MinimizedIcon.BackgroundTransparency=1
-	MinimizedIcon.Image="rbxassetid://90635907660208"; MinimizedIcon.Visible=false
-	MinimizedIcon.AutoButtonColor=false; H.Corner(UI,MinimizedIcon,8); H.MakeDraggable(UI,Root,MinimizedIcon)
+	local MinimizedIcon=Instance.new("TextButton",Root)
+MinimizedIcon.Size=UDim2.new(1,0,1,0)
+MinimizedIcon.BackgroundColor3=C.SURFACE
+MinimizedIcon.BorderSizePixel=0
+MinimizedIcon.Text="▯"
+MinimizedIcon.TextColor3=C.ACCENT
+MinimizedIcon.Font=Enum.Font.GothamBold
+MinimizedIcon.TextSize=32
+MinimizedIcon.Visible=false
+MinimizedIcon.AutoButtonColor=false
+H.Corner(UI,MinimizedIcon,10)
+H.Stroke(UI,MinimizedIcon,C.BORDER,1)
+H.MakeDraggable(UI,Root,MinimizedIcon)
 	local Win=Instance.new("Frame",Root)
 	Win.Size=UDim2.new(1,0,1,0); Win.BackgroundColor3=C.BASE; Win.ClipsDescendants=true; H.Corner(UI,Win,8); H.Stroke(UI,Win,C.BORDER,1)
 	local Header=Instance.new("Frame",Win)
