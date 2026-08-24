@@ -3433,7 +3433,7 @@ do
 		Tools._pickaxeHitAnimConn=animator.AnimationPlayed:Connect(function(track)
 			local animation=track and track.Animation
 			if not animation then return end
-			if animation.Name=="PickaxeHit" or animation.AnimationId=="rbxassetid://139314277000827" then
+			if animation.Name=="PickaxeHit" or animation.AnimationId=="rbxassetid://82311454956442" then
 				local speed=1
 				if boulderFastDig then
 					speed=1+((math.clamp(boulderDigSpeed or 100,100,10000)-100)/9900)*999
@@ -7006,7 +7006,7 @@ function InitializeUI()
 	Root.Size=UDim2.new(0,520,0,400); Root.Position=UDim2.new(0.5,-260,0.5,-200); Root.BackgroundTransparency=1
 	local MinimizedIcon=Instance.new("ImageButton",Root)
 	MinimizedIcon.Size=UDim2.new(1,0,1,0); MinimizedIcon.BackgroundTransparency=1
-	MinimizedIcon.Image="rbxassetid://139314277000827"; MinimizedIcon.Visible=false
+	MinimizedIcon.Image="rbxassetid://90635907660208"; MinimizedIcon.Visible=false
 	MinimizedIcon.AutoButtonColor=false; H.Corner(UI,MinimizedIcon,8); H.MakeDraggable(UI,Root,MinimizedIcon)
 	local Win=Instance.new("Frame",Root)
 	Win.Size=UDim2.new(1,0,1,0); Win.BackgroundColor3=C.BASE; Win.ClipsDescendants=true; H.Corner(UI,Win,8); H.Stroke(UI,Win,C.BORDER,1)
@@ -7019,7 +7019,7 @@ function InitializeUI()
 	AccentLine.BackgroundColor3=C.ACCENT; AccentLine.BorderSizePixel=0; H.Corner(UI,AccentLine,2)
 	local HeaderIcon=Instance.new("ImageLabel",Header)
 	HeaderIcon.Size=UDim2.new(0,30,0,30); HeaderIcon.Position=UDim2.new(0,8,0.5,-15)
-	HeaderIcon.BackgroundTransparency=1; HeaderIcon.Image="rbxassetid://139314277000827"
+	HeaderIcon.BackgroundTransparency=1; HeaderIcon.Image="rbxassetid://90635907660208"
 	H.Corner(UI,HeaderIcon,8)
 	local TitleLbl=Instance.new("TextLabel",Header)
 	TitleLbl.Size=UDim2.new(1,-132,1,0); TitleLbl.Position=UDim2.new(0,46,0,0)
