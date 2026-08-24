@@ -495,32 +495,29 @@ local Runtime = {
 -- checked once before the main script/UI is initialized.
 -- ============================================================
 function validateStartupKey()
-	if DEV_MODE == true then
-		return true
-	end
+    if DEV_MODE == true then
+        return true
+    end
 
-	local env=(type(getgenv)=="function" and getgenv()) or _G
-	local key=nil
-	pcall(function() key=env.key end)
-	if key==nil then pcall(function() key=_G.key end) end
-	key=tostring(key or ""):match("^%s*(.-)%s*$") or ""
-	if key=="" then return false end
+    local env = (type(getgenv) == "function" and getgenv()) or _G
+    local key = nil
 
-	local encoded=key
-	pcall(function() encoded=S.HttpService:UrlEncode(key) end)
-	local ok,response=pcall(function()
-		return game:HttpGet("https://growagardenpetfinder-default-rtdb.asia-southeast1.firebasedatabase.app/LivePets/"..encoded..".json")
-	end)
-	if not ok or type(response)~="string" then return false end
+    pcall(function()
+        key = env.key
+    end)
 
-	local decoded
-	local jsonOK,jsonValue=pcall(function() return S.HttpService:JSONDecode(response) end)
-	if jsonOK then decoded=jsonValue end
-	local valid=(decoded==true) or response:match("^%s*true%s*$")~=nil
-	if type(decoded)=="table" then
-		valid=decoded.active==true or decoded.valid==true or decoded.premium==true
-	end
-	return valid==true
+    if key == nil then
+        pcall(function()
+            key = _G.key
+        end)
+    end
+
+    key = tostring(key or ""):match("^%s*(.-)%s*$") or ""
+
+    -- Key disimpan langsung di script, tidak menggunakan Firebase
+    local VALID_KEY = "NXROT"
+
+    return key == VALID_KEY
 end
 
 -- Boulder/Vein coordination: a bomb-required notification blocks the current Boulder.
